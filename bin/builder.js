@@ -145,6 +145,8 @@ var builder = module.exports = function () {
       return;
     }
 
+    if (settings["skipFlash"] && transport == "flashsocket") return;
+
     // Add the files to the files list, but only if they are not added before
     dependencies.forEach(function (file) {
       var path = __dirname + '/../lib/' + file;
